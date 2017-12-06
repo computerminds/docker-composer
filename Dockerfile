@@ -23,3 +23,10 @@ ADD composer.json /tmp/composer.json
 RUN \
   cd /tmp && \
   composer install --no-dev
+
+# Add node and npm :(
+RUN \
+  curl -sL https://deb.nodesource.com/setup_8.x | bash - &&  \
+  apt update && apt install -y nodejs && \
+  apt-get clean all
+  

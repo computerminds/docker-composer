@@ -25,7 +25,6 @@
         "drupal/add_to_head": "1.x-dev",
         "drupal/admin_toolbar": "^1.14",
         "drupal/config_readonly": "1.0-beta2",
-        "drupal/console": "~0.10",
         "drupal/config_devel": "1.0-rc1",
         "drupal/csv_serialization": "1.0-alpha1",
         "drupal/devel": "1.x-dev",

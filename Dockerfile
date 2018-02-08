@@ -18,6 +18,9 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean all
 
+# Add make composer faster plugin.
+RUN composer global require hirak/prestissimo
+
 ADD composer.json /tmp/composer.json
 # Warm the composer caches with our common config.
 RUN \

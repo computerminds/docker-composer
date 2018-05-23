@@ -4,8 +4,6 @@ MAINTAINER "Steven Jones" <steven.jones@computerminds.co.uk>
 
 # Trust github for git clones.
 RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-# Trust acquia for git clones.
-RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa git.acquia.com >> ~/.ssh/known_hosts
 # Trust alfresco for git clones.
 RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa gitlab.alfresco.com >> ~/.ssh/known_hosts
 

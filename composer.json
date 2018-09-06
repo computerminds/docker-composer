@@ -63,6 +63,13 @@
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
             ]
-        }
+        },
+        "composer-version": "^1.6.3"
+    },
+    "config": {
+        "platform": {
+            "php": "7.1"
+        },
+        "sort-packages": true
     }
 }

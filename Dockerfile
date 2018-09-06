@@ -2,6 +2,9 @@ FROM composer/composer
 
 MAINTAINER "Steven Jones" <steven.jones@computerminds.co.uk>
 
+# Update composer
+RUN composer self-update
+
 # Trust github for git clones.
 RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 # Trust alfresco for git clones.
@@ -17,7 +20,9 @@ RUN \
   apt-get clean all
 
 # Add make composer faster plugin.
-RUN composer global require hirak/prestissimo
+RUN composer global require hirak/prestissimo deviantintegral/composer-gavel
+
+RUN composer --version
 
 ADD composer.json /tmp/composer.json
 # Warm the composer caches with our common config.

@@ -1,4 +1,4 @@
-FROM php:7-cli
+FROM php:7-cli-stretch
 
 MAINTAINER "Steven Jones" <steven.jones@computerminds.co.uk>
 

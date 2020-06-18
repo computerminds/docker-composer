@@ -12,7 +12,7 @@ RUN apt-get update && \
     libbz2-dev \
     libxslt-dev \
     libldap2-dev \
-    php-pear \
+#    php-pear \
     curl \
     git \
     subversion \

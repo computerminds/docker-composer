@@ -40,7 +40,6 @@ RUN \
 
 RUN apk --no-cache add \
         php7 \
-        php7-gd \
         php7-ctype \
         php7-curl \
         php7-dom \

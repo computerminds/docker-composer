@@ -53,6 +53,12 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && curl -o /tmp/composer-setup.sig https://composer.github.io/installer.sig \
   && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) !== trim(file_get_contents('/tmp/composer-setup.sig'))) { unlink('/tmp/composer-setup.php'); echo 'Invalid installer' . PHP_EOL; exit(1); }"
 
+# Install Composer
+RUN php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot && rm -rf /tmp/composer-setup.php
+
+# Display version information
+RUN composer --version
+
 # Set up the volumes and working directory
 VOLUME ["/app"]
 WORKDIR /app
@@ -62,7 +68,7 @@ CMD ["-"]
 ENTRYPOINT ["composer", "--ansi"]
 
 # Update composer
-RUN /composer/vendor/bin/composer self-update
+RUN composer self-update
 
 # Trust github for git clones.
 RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts

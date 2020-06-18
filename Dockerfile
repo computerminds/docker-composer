@@ -33,7 +33,8 @@ RUN \
 
 # Add node and npm :(
 RUN \
-  curl -sL https://deb.nodesource.com/setup_6.x | bash - &&  \
-  apt update && apt install -y nodejs && \
-  apt-get clean all
+  apk add nodejs
+#  curl -sL https://deb.nodesource.com/setup_6.x | bash - &&  \
+#  apt update && apt install -y nodejs && \
+#  apt-get clean all
   

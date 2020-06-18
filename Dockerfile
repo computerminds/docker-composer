@@ -1,4 +1,4 @@
-FROM composer:1
+FROM composer/composer
 
 MAINTAINER "Steven Jones" <steven.jones@computerminds.co.uk>
 

@@ -12,6 +12,7 @@ RUN apt-get update && \
     libbz2-dev \
     libxslt-dev \
     libldap2-dev \
+    libzip-dev \
 #    php-pear \
     curl \
     git \

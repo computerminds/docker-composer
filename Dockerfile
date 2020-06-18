@@ -62,7 +62,7 @@ CMD ["-"]
 ENTRYPOINT ["composer", "--ansi"]
 
 # Update composer
-RUN composer self-update
+RUN /composer/vendor/bin/composer self-update
 
 # Trust github for git clones.
 RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts

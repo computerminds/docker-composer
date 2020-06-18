@@ -12,13 +12,12 @@ RUN mkdir -p ~/.ssh && ssh-keyscan -t rsa gitlab.alfresco.com >> ~/.ssh/known_ho
 
 # Add Dockerize, as it's useful.
 RUN \
-  apk --no-cache add wget && \
+  apt-get update && apt-get install -y wget && \
   wget https://github.com/jwilder/dockerize/releases/download/v0.1.0/dockerize-linux-amd64-v0.1.0.tar.gz && \
-  tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.1.0.tar.gz 
-#  && \
-#  apk remove -y wget && \
-#  apt-get autoremove -y && \
-#  apt-get clean all
+  tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.1.0.tar.gz && \
+  apt-get remove -y wget && \
+  apt-get autoremove -y && \
+  apt-get clean all
 
 # Add make composer faster plugin.
 RUN composer global require hirak/prestissimo deviantintegral/composer-gavel

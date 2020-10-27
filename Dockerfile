@@ -43,7 +43,7 @@ RUN echo "always_populate_raw_post_data=-1" > $PHP_INI_DIR/conf.d/always_populat
 ENV COMPOSER_HOME /composer
 
 # Ensure the directory exists.
-RUN mkdir -p $COMPOSER_HOME
+RUN mkdir -p "$COMPOSER_HOME"
 
 # Add global binary directory to PATH and make sure to re-export it
 ENV PATH /composer/vendor/bin:$PATH
@@ -103,4 +103,6 @@ RUN \
   curl -sL https://deb.nodesource.com/setup_6.x | bash - &&  \
   apt update && apt install -y nodejs && \
   apt-get clean all
-  
+ 
+ RUN \
+   cd "$COMPOSER_HOME"

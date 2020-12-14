@@ -87,8 +87,8 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean all
 
-# Add make composer faster plugin.
-RUN composer global require hirak/prestissimo deviantintegral/composer-gavel
+# Add composer version validation plugin.
+RUN composer global require deviantintegral/composer-gavel
 
 RUN composer --version
 

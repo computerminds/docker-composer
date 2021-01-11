@@ -57,7 +57,7 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
   && php -r "if (hash('SHA384', file_get_contents('/tmp/composer-setup.php')) !== trim(file_get_contents('/tmp/composer-setup.sig'))) { unlink('/tmp/composer-setup.php'); echo 'Invalid installer' . PHP_EOL; exit(1); }"
 
 # Install Composer
-RUN php /tmp/composer-setup.php --no-ansi --1 --install-dir=/usr/local/bin --filename=composer && rm -rf /tmp/composer-setup.php
+RUN php /tmp/composer-setup.php --no-ansi --2 --install-dir=/usr/local/bin --filename=composer && rm -rf /tmp/composer-setup.php
 
 # Display version information
 RUN composer --version
@@ -87,8 +87,8 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean all
 
-# Add make composer faster plugin.
-RUN composer global require hirak/prestissimo deviantintegral/composer-gavel
+# Add composer version validation plugin.
+RUN composer global require deviantintegral/composer-gavel
 
 RUN composer --version
 

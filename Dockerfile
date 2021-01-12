@@ -87,9 +87,6 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean all
 
-# Add composer version validation plugin.
-RUN composer global require deviantintegral/composer-gavel
-
 RUN composer --version
 
 ADD composer.json /tmp/composer.json
